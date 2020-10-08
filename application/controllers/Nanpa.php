@@ -25,5 +25,10 @@ class Nanpa extends CI_Controller
     public function twit(){
         $this->load->view('twit_view.php');
     }
+    public function json(){
+        $config_file ="../js/pref_city.json";
+        $config_json = file_get_contents($config_file);
+        $elements = json_decode($config_json, true);
+    }
 }
 ?>
