@@ -6,10 +6,15 @@
 </head>
 <body>
     <div class="container">
+    <h1>検索ページ</h1>
         <div class="serch-page">
+        <p>場所</p>
             <select id="select-pref"><option value="">都道府県を選択してください</option></select>
+            <br>
             <select id="select-city"><option value="">市区町村を選択してください</option></select>
+        <p>日時</p>
             <input type="date" name="calendar" max="9999-12-31">
+        <p>年代</p>
             <select name="age">
                 <option value="">選択してください</option>
                 <option value="20歳未満">20歳未満</option>
@@ -21,8 +26,12 @@
                 <option value="70-79歳">70-79歳</option>
                 <option value="80歳以上">80歳以上</option>
             </select>
+        <p>性別</p>
             <input type="radio" name="gender" value="male">男性
             <input type="radio" name="gender" value="female">女性
+        <p>好きなタイプ</p>
+        <input type="file" name="image">
+        <br>
             <input type="submit" name="serch" value="検索する">
         </div>
         <a href="<?php echo base_url()."nanpa/main";?>">トップに戻る</a>
