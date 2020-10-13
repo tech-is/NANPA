@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>nanpa test</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url()."assets/css/style.css";?>">
 </haed>
 <body>
 <div class="container">
