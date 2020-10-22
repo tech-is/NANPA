@@ -1,17 +1,3 @@
-<?php
-session_start();
- 
-header("Content-type: text/html; charset=utf-8");
-
-//クロスサイトリクエストフォージェリ対策
-$_SESSION['token'] = base64_encode(openssl_random_pseudo_bytes(32));
-$token = $_SESSION['token'];
- 
-//クリックジャッキング対策
-header('X-FRAME-OPTIONS: SAMEORIGIN');
- 
-?>
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +7,7 @@ header('X-FRAME-OPTIONS: SAMEORIGIN');
 <body>
 <h1>メール登録画面</h1>
  
-<form action="registration_mail_check.php" method="post">
+<form action="/nanpa/registration_mail_check" method="post">
  
 <p>メールアドレス<br>　：<input type="text" name="mail" size="30"></p>
  
