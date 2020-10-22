@@ -4,12 +4,7 @@ stylesheet page
 * {
     box-sizing: border-box;
 }
-.cir-one{
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: skyblue;
-    text-align:center;
-    line-height: 80px;
+.jumbotron{
+    background: url('../../images/main.jpg');
+    background-size: cover;
 }
