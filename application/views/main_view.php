@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <!-- Required meta tags -->
@@ -32,15 +32,17 @@
         </li>
         </ul>
     </div>
-
+    <button type="button" class="btn btn-primary text-right" action="<?php echo base_url()."nanpa/login";?>">ログイン及び新規登録</button>
 </nav>
 
 <div class="container">
     <div class="jumbotron">
-    <h1>title(〇〇〇)</h1>
-    <p>text（●●）</p>
+        <div class="text">
+            <h1>title(〇〇〇)</h1>
+            <p>text（●●）</p>
+            <button type="button" class="btn btn-danger" action="<?php echo base_url()."nanpa/login";?>">さっそく始める</button>
+        </div>
     </div>
-    
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
