@@ -32,7 +32,7 @@
         </li>
         </ul>
     </div>
-    <button type="button" class="btn btn-primary text-right" action="<?php echo base_url()."nanpa/login";?>">ログイン及び新規登録</button>
+    <a type="button" class="btn btn-primary text-right" href="<?php echo base_url()."nanpa/login";?>" role="button">ログイン及び新規登録</a>
 </nav>
 
 <div class="container">
@@ -40,12 +40,30 @@
         <div class="text">
             <h1>title(〇〇〇)</h1>
             <p>text（●●）</p>
-            <button type="button" class="btn btn-danger" action="<?php echo base_url()."nanpa/login";?>">さっそく始める</button>
+            <a class="btn btn-danger" href="<?php echo base_url()."nanpa/login";?>" role="button">さっそく始める</a>
         </div>
     </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+
+<footer id="footer01" class="footer outer-block">
+    <div class="logo">
+        <a href="https://b-risk.jp/">
+            <img src="img/logo.svg" alt="">
+        </a>
+    </div>
+    <ul class="nav">
+        <li><a href="https://b-risk.jp/works/">Top</a></li>
+        <li><a href="https://b-risk.jp/blog/">利用規約</a></li>
+        <li><a href="https://b-risk.jp/recruit/">プライバシーポリシー</a></li>
+    </ul>
+    <p class="copyright">
+        COPYRIGHT © BRISK Inc. All rights Reserved.
+    </p>
+    </footer>
+
 </body>
 </html>
