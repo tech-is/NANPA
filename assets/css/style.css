@@ -4,6 +4,13 @@ stylesheet page
 * {
     box-sizing: border-box;
 }
+body{
+    font-family: 'Noto Serif JP', serif;
+    background:#fafafa;
+}
+.main {
+    padding:5% 0 10%;
+}
 .jumbotron{
     margin-top:56px;
     background: url('../../images/main.jpg') no-repeat center;
@@ -21,16 +28,20 @@ stylesheet page
     content: ' ';
 }
 .text{
-position: absolute;
-width: 100%;
-text-align: center;
-top:50%;
-left:50%;
-transform:translateY(-50%)translateX(-50%);
-margin:auto;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform:translateY(-50%)translateX(-50%);
+    margin:auto;
 }
-h1,p {
+h1,p.tests {
     color: #fff;
+}
+h2.title{
+    text-align:center;
+    padding:10% 0;
 }
 ul {
     list-style: none;
@@ -60,7 +71,6 @@ ul {
     color: #ccc;
 }
 @media only screen and (min-width: 641px) {
-    //PCのみ
     #footer01 .nav {
         display: -webkit-box;
         display: -webkit-flex;
@@ -79,4 +89,4 @@ ul {
     #footer01 .nav a:hover {
         color: #ca353b;
     }
-  }
+}
