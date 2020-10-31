@@ -48,7 +48,6 @@
     </ul>
 </nav>
 
-
 <div class="jumbotron">
     <div class="text">
         <h1>title(〇〇〇)</h1>
