@@ -33,5 +33,17 @@ class Nanpa extends CI_Controller
     public function test(){
         $this->load->view('main_view');
     }
+    // 登録（仮）フォームへ
+    public function registration_mail_form(){
+        $this->load->view('registration_mail_form_view');
+    }
+    // 登録（本）フォームへ
+    public function registration_form(){
+        $this->load->view('registration_form_view');
+    }
+    //ログインフォームへ
+    public function login(){
+        $this->load->view('login_form_view');
+    }
 }
 ?>
