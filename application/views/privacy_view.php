@@ -93,8 +93,7 @@
     Eメールアドレス：<br>
 </p>
 <br>
-<p><a href="top_view.php">ＴＯＰに戻る</a></p>
-<p><a href="registration_form_view.php">会員登録画面に戻る</a></p>
-
+<p><a href="<?php echo base_url()."nanpa/main";?>">ＴＯＰに戻る</a></p>
+<p><a href="<?php echo base_url()."nanpa/registration_form";?>">会員登録画面に戻る</a></p>
 </body>
 </html>

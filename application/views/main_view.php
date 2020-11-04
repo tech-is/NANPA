@@ -42,8 +42,8 @@
     </div>
     <ul>
         <li>
-            <a href="" class="btn btn-c">LOGIN</a>
-            <a href="" class="btn btn-b">SIGN UP</a>
+            <a href="<?php echo base_url()."nanpa/login";?>" class="btn btn-c">LOGIN</a>
+            <a href="<?php echo base_url()."nanpa/registration_mail_form";?>" class="btn btn-b">SIGN UP</a>
         </li>
     </ul>
 </nav>
@@ -52,7 +52,7 @@
     <div class="text">
         <h1>title(〇〇〇)</h1>
         <p class="tests">text（●●）</p>
-        <a href="" class="btn btn-3d-flip">
+        <a href="<?php echo base_url()."nanpa/top";?>" class="btn btn-3d-flip">
             <span class="btn-3d-flip-box">
                 <span class="btn-3d-flip-box-face btn-3d-flip-box-face--front">さっそく始める<i class="fas fa-angle-right fa-position-right"></i></span>
                 <span class="btn-3d-flip-box-face btn-3d-flip-box-face--back">Go Strat!!<i class="fas fa-angle-right fa-position-right"></i></span>
@@ -158,8 +158,8 @@
     </div>
     <ul class="nav">
         <li><a href="#">Top</a></li>
-        <li><a href="#">利用規約</a></li>
-        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="<?php echo base_url()."nanpa/terms";?>">利用規約</a></li>
+        <li><a href="<?php echo base_url()."nanpa/privacy";?>">プライバシーポリシー</a></li>
     </ul>
     <p class="copyright">
         COPYRIGHT © BRISK Inc. All rights Reserved.

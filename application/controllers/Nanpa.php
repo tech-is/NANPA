@@ -14,6 +14,15 @@ class Nanpa extends CI_Controller
         $this->main();
     }
     public function main(){
+        $this->load->view('main_view');
+    }
+    public function terms(){
+        $this->load->view('terms_view');
+    }
+    public function privacy(){
+        $this->load->view('privacy_view');
+    }
+    public function top(){
         $this->load->view('top_view');
     }
     public function serch(){
@@ -29,9 +38,6 @@ class Nanpa extends CI_Controller
         $config_file ="../js/pref_city.json";
         $config_json = file_get_contents($config_file);
         $elements = json_decode($config_json, true);
-    }
-    public function test(){
-        $this->load->view('main_view');
     }
     // 登録（仮）フォームへ
     public function registration_mail_form(){
