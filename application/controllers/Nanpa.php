@@ -16,6 +16,12 @@ class Nanpa extends CI_Controller
     public function main(){
         $this->load->view('main_view');
     }
+    public function terms(){
+        $this->load->view('terms_view');
+    }
+    public function privacy(){
+        $this->load->view('privacy_view');
+    }
     public function top(){
         $this->load->view('top_view');
     }
