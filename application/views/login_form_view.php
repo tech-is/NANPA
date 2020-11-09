@@ -5,9 +5,9 @@
 <meta charset="utf-8">
 </head>
 <body>
-<h1>ＮＡＮＰＡタイトル</h1>
+<h1>Ｃｏｍｐａｓｓ</h1>
 
-<h2>ＮＡＮＰＡサブタイトル</h2>
+<h2>Compass</h2>
  
 <form action="login_check" method="post">
  
@@ -20,8 +20,8 @@
  
 </form>
 <br>
-<p><a href="registration_mail_form">会員登録はこちら</a>
-<p><a href="terms.html">利用規約</a>　┃　<a href="privacy.html">プライバシーポリシー</a></p>
+<p><a href="<?php echo base_url()."nanpa/registration_mail_form";?>">会員登録はこちら</a>
+<p><a href="<?php echo base_url()."nanpa/terms";?>">利用規約</a>　┃　<a href="<?php echo base_url()."nanpa/privacy";?>">プライバシーポリシー</a></p>
 
 </body>
 </html>
