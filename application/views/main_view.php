@@ -19,7 +19,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">おナンパ</a>
+    <a class="navbar-brand" href="#">Compass</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,23 +48,20 @@
     </ul>
 </nav>
 
-<div class="jumbotron">
-    <div class="text">
-        <h1>title(〇〇〇)</h1>
-        <p class="tests">text（●●）</p>
-        <a href="<?php echo base_url()."nanpa/top";?>" class="btn btn-3d-flip">
-            <span class="btn-3d-flip-box">
-                <span class="btn-3d-flip-box-face btn-3d-flip-box-face--front">さっそく始める<i class="fas fa-angle-right fa-position-right"></i></span>
-                <span class="btn-3d-flip-box-face btn-3d-flip-box-face--back">Go Strat!!<i class="fas fa-angle-right fa-position-right"></i></span>
-            </span>
-        </a>
-    </div>
-</div>
 <div class="container">
-<div class="pagetop">
-    <p><a href="#top">▲TOPページへ</a></p>
-</div>
+    <div class="pagetop">
+        <p><a href="#top">▲TOPページへ</a></p>
+    </div>
     <div class="main">
+    <div id="viewer">
+            <ul>
+                <li><img src="<?php echo base_url()."images/cafe.jpg";?>" width="100%" height="auto"></li>
+                <li><img src="<?php echo base_url()."images/orange.jpg";?>" width="100%" alt="img"></li>
+                <li><img src="<?php echo base_url()."images/air.jpg";?>" width="100%" alt="img"</li>
+                <li><img src="<?php echo base_url()."images/ashi.jpg";?>" width="100%" alt="img"></li>
+                <li><img src="<?php echo base_url()."images/main.jpg";?>" width="100%" alt="img"></li>
+            </ul>
+            </div>
     <h2 class="title" id="about">About</h2>
         <div class="row">
             <div class="col-md-4  img-hidden img-rounded">
@@ -180,6 +177,25 @@
             (scrollPoint > amount)?$('.pagetop').fadeIn():(scrollPoint < amount)?$('.pagetop').fadeOut():$('.pagetop').show();
         });
     });
+    $(function(){
+    var $setElm = $('#viewer'),
+    fadeSpeed = 1500,
+    switchDelay = 5000;
+ 
+    $setElm.each(function(){
+        var targetObj = $(this);
+        var findUl = targetObj.find('ul');
+        var findLi = targetObj.find('li');
+        var findLiFirst = targetObj.find('li:first');
+ 
+        findLi.css({display:'block',opacity:'0',zIndex:'99'});
+        findLiFirst.css({zIndex:'100'}).stop().animate({opacity:'1'},fadeSpeed);
+ 
+        setInterval(function(){
+            findUl.find('li:first-child').animate({opacity:'0'},fadeSpeed).next('li').css({zIndex:'100'}).animate({opacity:'1'},fadeSpeed).end().appendTo(findUl).css({zIndex:'99'});
+        },switchDelay);
+    });
+});
 </script>
 
 </body>
