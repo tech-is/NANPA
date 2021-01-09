@@ -35,6 +35,7 @@
                     <input type="radio" name="gender" value="male">男性
                     <input type="radio" name="gender" value="female">女性
                     <!-- <p>好きなタイプ</p><input type="file" name="image"> -->
+                    <br>
                     <input type="submit" name="serch" value="検索する">
             </div>
             </form>
