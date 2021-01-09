@@ -3,6 +3,8 @@ stylesheet page
  ***************/
 * {
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 body{
     font-family: 'Noto Serif JP', serif;
@@ -215,21 +217,18 @@ a.btn-3d-flip.btn-3d-flip2:hover .btn-3d-flip-box2 {
     top: calc(50% - 0.5em);
     right: 1rem;
 }
-.jumbotron{
-    margin-top:56px;
-    background: url('../../images/main.jpg') no-repeat center;
-    background-size: cover;
+#viewer {
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+    text-align: left;
+    overflow: hidden;
     position: relative;
-    min-height:300px;
 }
-.jumbotron::before{
-    background-color: rgba(0,0,0,0.4);
-    position: absolute;
+#viewer img {
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    content: ' ';
+    position: absolute;
 }
 .text{
     position: absolute;

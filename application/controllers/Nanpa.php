@@ -28,6 +28,13 @@ class Nanpa extends CI_Controller
     public function serch(){
         $this->load->view('serch_view');
     }
+    public function serch_submit(){
+        $data = array(
+            $this->input->post()
+        );
+        var_dump($data);
+        exit();
+    }
     public function profile(){
         $this->load->view('profile_view');
     }

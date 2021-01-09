@@ -7,6 +7,7 @@
 <body>
     <div class="container">
     <h1>検索ページ</h1>
+    <form id="form" action="<?php echo base_url()."nanpa/serch_submit";?>" method="post" >
         <div class="serch-page">
         <p>場所</p>
             <select id="select-pref"><option value="">都道府県を選択してください</option></select>
@@ -29,11 +30,12 @@
         <p>性別</p>
             <input type="radio" name="gender" value="male">男性
             <input type="radio" name="gender" value="female">女性
-        <p>好きなタイプ</p>
-        <input type="file" name="image">
+        <!-- <p>好きなタイプ</p>
+        <input type="file" name="image"> -->
         <br>
             <input type="submit" name="serch" value="検索する">
         </div>
+        </form>
         <a href="<?php echo base_url()."nanpa/main";?>">トップに戻る</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
