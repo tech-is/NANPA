@@ -11,7 +11,7 @@ class Nanpa extends CI_Controller
         $this->load->helper(array('form', 'url'));
     }
     public function index(){
-        $this->main();
+        $this->top();
     }
     public function main(){
         $this->load->view('main_view');
@@ -26,14 +26,14 @@ class Nanpa extends CI_Controller
         $this->load->view('top_view');
     }
     public function serch(){
-        $this->load->view('serch_view');
+        $this->load->view('serch_pages/serch_view');
     }
     public function serch_submit(){
-        $data = array(
-            $this->input->post()
-        );
-        var_dump($data);
-        exit();
+        // $data = array(
+        //     $this->input->post()
+        // );
+        $data = 'hello';
+        $this->load->view('serch_pages/serch_detail',$data);
     }
     public function profile(){
         $this->load->view('profile_view');
