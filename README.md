@@ -3,6 +3,7 @@
 ## Compassとは？
 
 全ての出会いを実現させるそんな目標を立てて制作しているマッチングサイトです。
+
 皆さんの出会いを北向き（正しい方向）へと導きだすそんなコンセプトが立てられています。
 
 ## 主な機能
@@ -24,7 +25,46 @@
 
 ## データベース設計
 
-※後に記載
+データベース名:compass
+
+
+- テーブル名:goods
+
+|    Column    | Type        | Null  | key | Default |　Extra       |
+| :----------: | :---------: | :---: |:---:|  :---:  |    :---:     |   
+| id           | int(11)     | No    | PRI | None    |auto_increment|
+| post_id      | int(11)     | No    |     | Null    |              |
+| user_id      | int(11)     | No    |     | Null    |              |
+| delete_flg   | tinyint(1)  | No    |     | Null    |              |
+| created_date | datetime    | No    |     | Null    |              |
+| updata_date  | timestamp   | No    |     | Null    |              |
+
+
+- テーブル名:posts
+
+|    Column    | Type        | Null  | key | Default |　Extra       |
+| :----------: | :---------: | :---: |:---:|  :---:  |    :---:     |   
+| id           | int(11)     | No    | PRI | None    |auto_increment|
+| email        | varchar(256)| No    |     | Null    |              |
+| password     | varchar(256)| No    |     | Null    |              |
+| is_registrs  | tinyint(4)  | No    |     | Null    |              |
+| created_date | datetime    | No    |     | Null    |              |
+| updata_date  | timestamp   | No    |     | Null    |              |
+
+
+- テーブル名:users
+
+|    Column    | Type        | Null  | key | Default |　Extra       |
+| :----------: | :---------: | :---: |:---:|  :---:  |    :---:     |   
+| id           | int(11)     | No    | PRI | None    |auto_increment|
+| name         | varchar(200)| No    |     | Null    |              |
+| gender       | int(2)      | No    |     | Null    |              |
+| year         | int(8)      | No    |     | Null    |              |
+| address      | varchar(200)| No    |     | Null    |              |
+| specified_at | datetime    | No    |     | Null    |              |
+| message      | text        | No    |     | Null    |              |
+| post_date    | datetime    | No    |     | Null    |              |
+
 
 ## 画面設計書,DB設計書
 
