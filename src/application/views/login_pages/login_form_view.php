@@ -22,8 +22,8 @@
 
     </form>
     <br>
-    <p><a href="<?php echo base_url() . "nanpa/registration_mail_form"; ?>">会員登録はこちら</a>
-    <p><a href="<?php echo base_url() . "nanpa/terms"; ?>">利用規約</a>　┃　<a href="<?php echo base_url() . "nanpa/privacy"; ?>">プライバシーポリシー</a></p>
+    <p><a href="<?php echo base_url() . "compass/register_mail_form"; ?>">会員登録はこちら</a>
+    <p><a href="<?php echo base_url() . "compass/terms"; ?>">利用規約</a>　┃　<a href="<?php echo base_url() . "compass/privacy"; ?>">プライバシーポリシー</a></p>
 
 </body>
 
