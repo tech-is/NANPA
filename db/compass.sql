@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- テーブルの構造 `goods`
 --
 
-CREATE TABLE `good` (
+CREATE TABLE `goods` (
   `id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
