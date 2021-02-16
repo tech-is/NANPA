@@ -29,10 +29,9 @@ class Nanpa extends CI_Controller
         $this->load->view('serch_pages/serch_view');
     }
     public function serch_submit(){
-        // $data = array(
-        //     $this->input->post()
-        // );
-        $data = 'hello';
+        $data = array(
+            $this->input->post()
+        );
         $this->load->view('serch_pages/serch_detail',$data);
     }
     public function profile(){

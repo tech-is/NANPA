@@ -17,8 +17,8 @@
                     <p>市町村</p>
                     <select id="city" name="city" onFocus="change()">
                     </select>
-                    <p>日時</p>
-                    <input type="date" name="calendar" max="9999-12-31">
+                    <!-- <p>日時</p>
+                    <input type="date" name="calendar" max="9999-12-31"> -->
                     <p>年代</p>
                     <select name="age">
                         <option value="">選択してください</option>
