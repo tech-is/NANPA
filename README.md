@@ -81,7 +81,7 @@ https://docs.google.com/spreadsheets/d/1-6Kkul4uTmF9SOy59QjSvYRlmdZ7es1Ddyc0rXnR
   ・application/  
     ・config/ デフォルトコントローラーの設定やデータベースの設定ファイル等  
     ・controler/ コントローラーのフォルダ
-    　・nanpa.php/ メインのコントローラー
+    　・compass.php/ メインのコントローラー
     ・model/ データベース周りの処理フォルダ  
     ・views/ フロントエンドファイルをまとめたフォルダ
       ・folio/  サイトの検索をまとめたのフォルダ

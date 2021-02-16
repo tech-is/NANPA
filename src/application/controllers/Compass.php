@@ -1,10 +1,10 @@
 <?php 
 /***********************
- * nanpa main page
+ * compass main page
  ***********************/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nanpa extends CI_Controller
+class Compass extends CI_Controller
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class Nanpa extends CI_Controller
     }
     public function index()
     {
-        $this->top();
+        $this->main();
     }
     public function main()
     {
@@ -47,33 +47,32 @@ class Nanpa extends CI_Controller
         if($data['prefectures'] && $data['age'] && $data['gender'] == $this->Compass_model->serch_data()) {
             $this->load->view('serch_pages/serch_detail',$data);
         } else {
-            echo "データベール登録情報がありません。";
+            echo "データベース登録情報がありません。";
             $this->load->view('serch_pages/serch_detail',$data);
         }
 
     }
     public function profile(){
-        $this->load->view('profile_view');
+        $this->load->view('profile_pagas/profile_view');
     }
     public function twit(){
-        $this->load->view('twit_view');
+        $this->load->view('profile_pagas/twit_view');
     }
-    public function json(){
-        $config_file ="../js/pref_city.json";
-        $config_json = file_get_contents($config_file);
-        $elements = json_decode($config_json, true);
-    }
+    // public function json(){
+    //     $config_file ="../js/pref_city.json";
+    //     $config_json = file_get_contents($config_file);
+    //     $elements = json_decode($config_json, true);
+    // }
     // 登録（仮）フォームへ
-    public function registration_mail_form(){
-        $this->load->view('registration_mail_form_view');
+    public function register_mail_form(){
+        $this->load->view('register_pages/register_mail_form_view');
     }
     // 登録（本）フォームへ
-    public function registration_form(){
-        $this->load->view('registration_form_view');
+    public function register_form(){
+        $this->load->view('register_pages/register_form_view');
     }
     //ログインフォームへ
     public function login(){
-        $this->load->view('login_form_view');
+        $this->load->view('login_pages/login_form_view');
     }
 }
-?>

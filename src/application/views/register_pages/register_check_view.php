@@ -12,7 +12,7 @@
 	<?php if (count($errors) === 0) : ?>
 
 
-		<form action="nanpa/registration_insert" method="post">
+		<form action="compass/register_insert" method="post">
 
 			<p>メールアドレス（ログインＩＤ）<br>：<?= htmlspecialchars($_SESSION['mail'], ENT_QUOTES) ?></p>
 			<p>ログインパスワード<br>：<?= $password_hide ?></p>

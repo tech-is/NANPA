@@ -10,7 +10,7 @@
 	<h1>会員登録画面</h1>
 
 
-	<form action="registration_check" method="post">
+	<form action="<?php echo base_url(). "compass/register_check";?>" method="post">
 
 		<p>メールアドレス（ログインＩＤ）<br> ：<input type="text" name="mail" size="30"></p>
 		<p>ログインパスワード<br> ：<input type="text" name="password" size="30"></p>
@@ -32,7 +32,7 @@
 	</form>
 
 	<br>
-	<p><a href="<?php echo base_url() . "nanpa/terms"; ?>">利用規約</a>　┃　<a href="<?php echo base_url() . "nanpa/privacy"; ?>">プライバシーポリシー</a></p>
+	<p><a href="<?php echo base_url() . "compass/terms"; ?>">利用規約</a> | <a href="<?php echo base_url() . "compass/privacy"; ?>">プライバシーポリシー</a></p>
 
 </body>
 

@@ -42,8 +42,8 @@
     </div>
     <ul>
         <li>
-            <a href="<?php echo base_url()."nanpa/login";?>" class="btn btn-c">LOGIN</a>
-            <a href="<?php echo base_url()."nanpa/registration_mail_form";?>" class="btn btn-b">SIGN UP</a>
+            <a href="<?php echo base_url()."compass/login";?>" class="btn btn-c">LOGIN</a>
+            <a href="<?php echo base_url()."compass/register_mail_form";?>" class="btn btn-b">SIGN UP</a>
         </li>
     </ul>
 </nav>
@@ -155,8 +155,8 @@
     </div>
     <ul class="nav">
         <li><a href="#">Top</a></li>
-        <li><a href="<?php echo base_url()."nanpa/terms";?>">利用規約</a></li>
-        <li><a href="<?php echo base_url()."nanpa/privacy";?>">プライバシーポリシー</a></li>
+        <li><a href="<?php echo base_url()."compass/terms";?>">利用規約</a></li>
+        <li><a href="<?php echo base_url()."compass/privacy";?>">プライバシーポリシー</a></li>
     </ul>
     <p class="copyright">
         COPYRIGHT © BRISK Inc. All rights Reserved.
