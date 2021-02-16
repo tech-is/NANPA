@@ -21,14 +21,16 @@
         </thead>
         <tbody>
             <!-- @foreach($travels as $travel) -->
+            <!-- <?php foreach($query->result_array() as $row):?>
             <tr>
                 <td><a href=""></a></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $row['prefectures'];?></td>
+                <td><?php echo $row['age']; ?></td>
+                <td><?php echo $row['gender']; ?></td>
                 <td></td>
                 <td><button type="button" class="btn btn-primary" onclick="location.href='/travel/edit/{{ $travel->id }}'">詳細</button></td>
             </tr>
+            <?php endforeach;?> -->
     </table>
 </body>
 </html>

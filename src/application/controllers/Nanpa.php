@@ -6,33 +6,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Nanpa extends CI_Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
+        $this->load->model("Compass_model");
     }
-    public function index(){
+    public function index()
+    {
         $this->top();
     }
-    public function main(){
+    public function main()
+    {
         $this->load->view('main_view');
     }
-    public function terms(){
+    public function terms()
+    {
         $this->load->view('terms_view');
     }
-    public function privacy(){
+    public function privacy()
+    {
         $this->load->view('privacy_view');
     }
-    public function top(){
+    public function top()
+    {
         $this->load->view('top_view');
     }
-    public function serch(){
+    public function serch()
+    {
         $this->load->view('serch_pages/serch_view');
     }
-    public function serch_submit(){
+    public function serch_submit()
+    {
         $data = array(
-            $this->input->post()
+            "prefectures" => $this->input->post('prefectures'),
+            "age" => $this->input->post('age'),
+            "gender" => $this->input->post('gender')
         );
-        $this->load->view('serch_pages/serch_detail',$data);
+
+        if($data['prefectures'] && $data['age'] && $data['gender'] == $this->Compass_model->serch_data()) {
+            $this->load->view('serch_pages/serch_detail',$data);
+        } else {
+            echo "データベール登録情報がありません。";
+            $this->load->view('serch_pages/serch_detail',$data);
+        }
+
     }
     public function profile(){
         $this->load->view('profile_view');
