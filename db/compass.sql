@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `good`
+-- テーブルの構造 `goods`
 --
 
 CREATE TABLE `good` (
@@ -47,7 +47,9 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `is_registrs` tinyint(4) NOT NULL
+  `is_registrs` tinyint(4) NOT NULL,
+  `created_date` datetime NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -74,9 +76,9 @@ CREATE TABLE `users` (
 --
 
 --
--- テーブルのインデックス `good`
+-- テーブルのインデックス `goods`
 --
-ALTER TABLE `good`
+ALTER TABLE `goods`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -97,9 +99,9 @@ ALTER TABLE `users`
 --
 
 --
--- テーブルのAUTO_INCREMENT `good`
+-- テーブルのAUTO_INCREMENT `goods`
 --
-ALTER TABLE `good`
+ALTER TABLE `goods`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
