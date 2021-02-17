@@ -84,11 +84,13 @@ class Compass extends CI_Controller
 
         $this->load->library('form_validation');
         
-        $this->form_validation->set_rules('email', 'メールアドレス', 'required|valid_email|xss_clean');
-        $this->form_validation->set_rules('password', 'パスワード', 'required|');
-        $this->form_validation->set_rules('cpassword', 'パスワードの確認', 'required|matches[password]');
-        $this->form_validation->set_rules('age_submit', '年齢確認', 'required');
-        $this->form_validation->set_rules('terms', '利用同意', 'required');
+        $this->form_validation->set_rules('email', 'メールアドレス', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'パスワード', 'trim|required');
+        $this->form_validation->set_rules('cpassword', 'パスワードの確認', 'trim|required|matches[password]');
+        $this->form_validation->set_rules('age_submit', '年齢確認', 'trim|required');
+        $this->form_validation->set_rules('terms', '利用同意', 'trim|required');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
         if ($this->form_validation->run() == FALSE){
 
