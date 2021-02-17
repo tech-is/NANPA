@@ -77,9 +77,9 @@ class Compass extends CI_Controller
         $data = array(
             "email" => $this->input->post('email'),
             "password" => $this->input->post('password'),
-            "cpassword" => $this->input->post('cpassword'),
-            "age_submit" => $this->input->post('age_submit'),
-            "terms" => $this->input->post('terms')
+            // "cpassword" => $this->input->post('cpassword'),
+            // "age_submit" => $this->input->post('age_submit'),
+            // "terms" => $this->input->post('terms')
         );
 
         $this->load->library('form_validation');
@@ -94,17 +94,22 @@ class Compass extends CI_Controller
 
         if ($this->form_validation->run() == FALSE){
 
-            $this->load->view('register_pages/register_mail_form_view');
+            $this->load->view('register_pages/register_view');
+
         } else {
             $this->Compass_model->add_users($data);
+            $this->register_mail($data);
         }
-
-
     }
     // 登録（本）フォームへ
-    public function register_form()
+    public function register_mail($data)
     {
-        $this->load->view('register_pages/register_form_view');
+        //メールの送信
+
+
+        //
+        $this->load->view('register_pages/register_done_view',$data);
+
     }
     //ログインフォームへ
     public function login()

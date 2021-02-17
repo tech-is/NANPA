@@ -24,7 +24,7 @@
 			<?php echo form_error('age_submit'); ?>
 			<input type="checkbox" name="age_submit" value="1"<?php echo set_checkbox('age_submit','1'); ?> />
 			<label for="">私は18歳以上です。</label>
-			<p style="font-size:1vh;"> ※18歳未満の方はご利用できません。</p>
+			<p style="color: #FA0000;font-size:1vh;"> ※18歳未満の方はご利用できません。</p>
 		</div>
 		<div>
 			<?php echo form_error('terms'); ?>

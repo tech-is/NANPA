@@ -6,9 +6,9 @@ class Compass_model extends CI_Model {
         parent::__construct();
         $this->load->database();
     }
-    public function add_users()
+    public function add_users($data)
     {
-        
+        $this->db->insert('posts',$data);
     }
     public function serch_data()
     {
