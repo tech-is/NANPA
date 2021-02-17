@@ -8,21 +8,27 @@
 
 <body>
 	<h1>会員登録画面</h1>
+	<?php echo form_open('compass/register_check'); ?>
 
-
-	<form action="<?php echo base_url(). "compass/register_check";?>" method="post">
-
-		<p>メールアドレス（ログインＩＤ）<br> ：<input type="text" name="mail" size="30"></p>
-		<p>ログインパスワード<br> ：<input type="text" name="password" size="30"></p>
-		<p>確認入力<br> ：<input type="text" name="cpassword" size="30"></p>
+		<h5>メールアドレス(ログインID)</h5>
+		<?php echo form_error('email'); ?>
+		<input type="email" name="email" value="<?php echo set_value('email'); ?>" size="30">
+		<h5>パスワード</h5>
+		<?php echo form_error('password'); ?>
+		<input type="password" name="password" value="<?php echo set_value('email'); ?>" size="30">
+		<h5>パスワード確認</h5>
+		<?php echo form_error('cpassword'); ?>
+		<input type="password" name="cpassword" size="30"></p>
 		<div>
-			<input type="checkbox" name="nenrei_kakunin" value="1">
-			<label for="nenrei_kakunin">私は１８歳以上です。</label><br>
-			<p> ※１８歳未満の方はご利用できません。</p>
+			<?php echo form_error('age_submit'); ?>
+			<input type="checkbox" name="age_submit" value="<?php echo set_value('age_submit'); ?>">
+			<label for="">私は18歳以上です。</label>
+			<p style="color:red; font-size:2vh;"> ※18歳未満の方はご利用できません。</p>
 		</div>
 		<div>
-			<input type="checkbox" name="kiyaku_doui" value="1">
-			<label for="kiyaku_doui">利用規約に同意する。</label><br>
+			<?php echo form_error('terms'); ?>
+			<input type="checkbox" name="terms" value="<?php echo set_value('terms'); ?>">
+			<label for="terms">利用規約に同意する。</label><br>
 		</div>
 		<br>
 
