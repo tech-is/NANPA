@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>compass test</title>
+    <title>compass</title>
     <link rel="stylesheet" href="<?php echo base_url() . "assets/css/style.css"; ?>">
     </haed>
 

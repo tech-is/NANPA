@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<h2>マイページの変更</h2>
     <div class="element_wrap">
         <label>氏名</label>
         <input type="text" name="your_name" value="<?php if (!empty($_POST['your_name'])) {
@@ -31,13 +32,13 @@
             <label for="birth">年月日： </label>
             <select id="year">
                 <option value="0">----</option>
-            </select> 年
+            </select>年
             <select id="month">
                 <option value="0">--</option>
-            </select> 月
+            </select>月
             <select id="date">
                 <option value="0">--</option>
-            </select> 日
+            </select>日
         </li>
     </div>
     <a class="botton" href="mypage.php">保存</a>

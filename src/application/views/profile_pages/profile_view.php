@@ -1,4 +1,3 @@
-profile
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,15 +8,16 @@ profile
 
 <body>
    <h1>マイページ</h1>
-   <label>ニックネーム</label>
-   <div class="element_wrap">
-      <label>性別</label>
-
-   </div>
-   <label>年齢</label>
-
-   <a class="botton" href="profile_edit.php">登録内容を変更する</a>
-   <a class="botton" href="">ＴＯＰに戻る</a>
+   <label for="name">ニックネーム</label>
+   <p><?php ?></p>
+   <label for="gender">性別</label>
+   <p><?php ?></p>
+   <label for="age">年齢</label>
+   <p><?php ?></p>
+   <label for="photo">プロフィール写真</label>
+   <p><?php ?></p>
+   <a class="botton" href="<?php echo base_url()."compass/profile_change";?>">登録内容を変更する</a>
+   <a class="botton" href="">TOPに戻る</a>
 </body>
 
 </html>
