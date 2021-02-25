@@ -11,13 +11,13 @@
 	<h1>会員登録画面</h1>
 	<?php echo form_open('compass/register_check'); ?>
 
-		<h5>メールアドレス(ログインID)</h5>
+		<p>メールアドレス(ログインID)</p>
 		<?php echo form_error('email'); ?>
 		<input type="email" name="email" value="<?php echo set_value('email'); ?>" size="30" />
-		<h5>パスワード</h5>
+		<p>パスワード</p>
 		<?php echo form_error('password'); ?>
 		<input type="password" name="password" value="<?php echo set_value('password'); ?>" size="30" />
-		<h5>パスワード確認</h5>
+		<p>パスワード確認</p>
 		<?php echo form_error('cpassword'); ?>
 		<input type="password" name="cpassword"value="<?php echo set_value('cpassword'); ?>" size="30" /></p>
 		<div>

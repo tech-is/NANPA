@@ -118,4 +118,8 @@ class Compass extends CI_Controller
     {
         $this->load->view('login_pages/login_form_view');
     }
+    public function login_check()
+    {
+                
+    }
 }
