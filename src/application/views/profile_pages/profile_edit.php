@@ -24,7 +24,7 @@
         value="female" <?php if (!empty($_POST['sex']) && $_POST['sex'] === "female") {echo 'checked';} ?>>女性</label>
     </div>
     <div class="element_wrap">
-            <label for="birth">年月日： </label>
+            <label for="birth">年月日</label>
             <select id="year">
                 <option value="0">----</option>
             </select>年
