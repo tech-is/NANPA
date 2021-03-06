@@ -44,14 +44,12 @@ class Compass extends CI_Controller
             "age" => $this->input->post('age'),
             "gender" => $this->input->post('gender')
         );
-
         if($data['prefectures'] && $data['age'] && $data['gender'] == $this->Compass_model->serch_data()) {
             $this->load->view('serch_pages/serch_detail',$data);
         } else {
             echo "データベース登録情報がありません。";
             $this->load->view('serch_pages/serch_detail',$data);
         }
-
     }
     public function profile()
     {
@@ -61,17 +59,10 @@ class Compass extends CI_Controller
     {
         $this->load->view('profile_pages/profile_edit');
     }
-    
     public function twit()
     {
         $this->load->view('profile_pagas/twit_view');
     }
-    // public function json(){
-    //     $config_file ="../js/pref_city.json";
-    //     $config_json = file_get_contents($config_file);
-    //     $elements = json_decode($config_json, true);
-    // }
-
     // 新規登録
     public function register_mail_form()
     {
@@ -83,8 +74,8 @@ class Compass extends CI_Controller
         $data = array(
             "email" => $this->input->post('email'),
             "password" => $this->input->post('password'),
+            "post_date" => date('Y-m-d H:i:s'),
         );
-
         $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
         
         $this->form_validation->set_rules('email', 'メールアドレス', 'trim|required|valid_email');
@@ -110,7 +101,6 @@ class Compass extends CI_Controller
     {
         //メールの送信
         $this->load->view('register_pages/register_done_view',$data);
-
     }
     //ログインフォームへ
     public function login()
