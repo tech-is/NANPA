@@ -8,11 +8,11 @@ class Compass_model extends CI_Model {
     }
     public function add_users($data)
     {
-        return $this->db->insert('posts',$data);
+        return $this->db->insert('users',$data);
     }
     public function login_check()
     {
-        $this->db->from('posts');
+        $this->db->from('users');
         $query = $this->db->get();
 
         if($query->num_rows() > 0){
