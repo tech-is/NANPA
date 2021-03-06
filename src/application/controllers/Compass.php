@@ -109,7 +109,6 @@ class Compass extends CI_Controller
     public function register_mail($data)
     {
         //メールの送信
-        //
         $this->load->view('register_pages/register_done_view',$data);
 
     }
@@ -120,6 +119,27 @@ class Compass extends CI_Controller
     }
     public function login_check()
     {
-                
+        $data = [
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password')
+        ];
+        if($admin_data = $this->Compass_model->login_check()) {
+            if(password_verify($data['password'],$admin_data['password'])) {
+                $_SESSION['admin'] = true;
+                $this->can_login();
+            } else {
+                redirect('compass/login');
+            }
+        } else {
+            redirect('compass/login');
+        }
+    }
+    public function can_login() {
+        if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
+            redirect('compass/login');
+        } else {
+            $this->top();
+        }
+
     }
 }

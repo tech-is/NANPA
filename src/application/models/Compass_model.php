@@ -10,9 +10,14 @@ class Compass_model extends CI_Model {
     {
         return $this->db->insert('posts',$data);
     }
-    public function get_user_login($email,$password)
+    public function login_check()
     {
-        // $query = $this->db->get_where('posts',array('email' => $email, 'password' => password_verify($password)));
+        $this->db->from('posts');
+        $query = $this->db->get();
+
+        if($query->num_rows() > 0){
+			return $query->row_array();
+		}
         
     }
     public function serch_data()
