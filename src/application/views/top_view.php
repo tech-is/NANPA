@@ -4,20 +4,20 @@
 <head>
     <meta charset="utf-8">
     <title>compass</title>
-    <link rel="stylesheet" href="<?php echo base_url() . "assets/css/style.css"; ?>">
+    <link rel="stylesheet" href="<?php echo base_url()."assets/css/style.css"; ?>">
     </haed>
 
 <body>
     <div class="container">
         <div class="serch-page">
             <div class="circle">
-                <a class="cir-one" href="<?php echo base_url() . "compass/serch"; ?>">相手を探す</a>
+                <a class="cir-one" href="<?php echo base_url()."compass/serch"; ?>">相手を探す</a>
             </div>
             <div class="circle">
-                <a class="cir-one" href="<?php echo base_url() . "compass/profile"; ?>">マイページ</a>
+                <a class="cir-one" href="<?php echo base_url()."compass/profile"; ?>">マイページ</a>
             </div>
             <div class="circle">
-                <a class="cir-one" href="<?php echo base_url() . "compass/twit"; ?>">投稿する</a>
+                <a class="cir-one" href="<?php echo base_url()."compass/post_message"; ?>">投稿する</a>
             </div>
         </div>
         <div class="out">

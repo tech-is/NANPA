@@ -39,7 +39,7 @@
                     <input type="submit" name="serch" value="検索する">
             </div>
             </form>
-            <a href="<?php echo base_url() . "compass/main"; ?>">トップに戻る</a>
+            <a class="botton" href="<?php echo base_url()."compass/top";?>">TOPに戻る</a>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="/js/place.js"></script>

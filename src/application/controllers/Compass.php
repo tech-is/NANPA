@@ -53,15 +53,16 @@ class Compass extends CI_Controller
     }
     public function profile()
     {
+
         $this->load->view('profile_pages/profile_view');
     }
     public function profile_change()
     {
         $this->load->view('profile_pages/profile_edit');
     }
-    public function twit()
+    public function post_message()
     {
-        $this->load->view('profile_pagas/twit_view');
+        $this->load->view('profile_pages/message_view');
     }
     // 新規登録
     public function register_mail_form()
