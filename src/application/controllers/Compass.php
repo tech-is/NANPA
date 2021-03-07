@@ -53,8 +53,13 @@ class Compass extends CI_Controller
     }
     public function profile()
     {
-
-        $this->load->view('profile_pages/profile_view');
+        if($data['results'] = $this->load->Compass_model->getData()){
+            $this->load->view('profile_pages/profile_view',$data);
+        } else {
+            echo "データベース登録情報がありません。";
+            $this->load->view('profile_pages/profile_view',$data);
+        }
+        
     }
     public function profile_change()
     {
