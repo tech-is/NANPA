@@ -12,13 +12,12 @@ class Compass_model extends CI_Model {
     }
     public function login_check()
     {
-        $this->db->from('users');
-        $query = $this->db->get();
+        // $this->db->from('users');
+        $query = $this->db->get('users');
 
         if($query->num_rows() > 0){
 			return $query->row_array();
-		}
-        
+		}        
     }
     public function serch_data()
     {
@@ -30,5 +29,14 @@ class Compass_model extends CI_Model {
             return false;
         }
     }
+    function getData($session_id){
+        $query = $this->db->get_where('users', array('id' => $session_id));
+
+        if($query->num_rows() > 0){
+            return $query->result_array();
+        } else {
+            return false;
+        }
+	}
 }
 ?>
