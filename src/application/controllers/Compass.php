@@ -53,13 +53,14 @@ class Compass extends CI_Controller
     }
     public function profile()
     {
-        if($data['results'] = $this->load->Compass_model->getData()){
-            $this->load->view('profile_pages/profile_view',$data);
+        $session_id = $this->session->userdata('user_id');
+
+        if($this->load->Compass_model->getData($session_id)){
+            $this->load->view('profile_pages/profile_view');
         } else {
             echo "データベース登録情報がありません。";
-            $this->load->view('profile_pages/profile_view',$data);
+            $this->load->view('profile_pages/profile_view');
         }
-        
     }
     public function profile_change()
     {
@@ -106,6 +107,7 @@ class Compass extends CI_Controller
     public function register_mail($data)
     {
         //メールの送信
+
         $this->load->view('register_pages/register_done_view',$data);
     }
     //ログインフォームへ
@@ -115,19 +117,33 @@ class Compass extends CI_Controller
     }
     public function login_check()
     {
-        $data = [
-            'email' => $this->input->post('email'),
-            'password' => $this->input->post('password')
-        ];
-        if($admin_data = $this->Compass_model->login_check()) {
-            if(password_verify($data['password'],$admin_data['password'])) {
-                $_SESSION['admin'] = true;
-                $this->can_login();
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        $this->form_validation->set_rules('email', 'メールアドレス', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'パスワード', 'trim|required');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+        
+        if($this->form_validation->run() === FALSE){
+            $this->load->view('compass/login');
+        } else { 
+            if($admin_data = $this->Compass_model->login_check()) {
+                if(password_verify($password,$admin_data['password'])) {
+                    $_SESSION['admin'] = true;
+                    $this->session->set_userdata('email',$email);
+                    $this->session->set_userdata('password',$password);
+                    $this->session->set_userdata('user_id',$admin_data['id']);
+                    $this->session->set_userdata('is_logged_in', true);
+                    $this->can_login();
+                } else {
+                    $this->session->set_flashdata('msg_error','Login missed...');    
+                    redirect('compass/login');
+                }
             } else {
+                $this->session->set_flashdata('msg_error','Login missed...');
                 redirect('compass/login');
             }
-        } else {
-            redirect('compass/login');
         }
     }
     public function can_login() {
@@ -136,6 +152,5 @@ class Compass extends CI_Controller
         } else {
             $this->top();
         }
-
     }
 }
