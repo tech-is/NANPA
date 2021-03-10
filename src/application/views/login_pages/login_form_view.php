@@ -10,7 +10,6 @@
 <body>
     <h1>Compass</h1>
     <?php echo form_open('compass/login_check'); ?>
-
         <p>メールアドレス(ログインID)</p>
         <?php echo form_error('email'); ?>
         <input type="email" name="email" value="<?php echo set_value('email');?>" size="30"/>
@@ -19,7 +18,6 @@
         <input type="password" name="password" value="<?php echo set_value('password');?>" size="30"/>
         <p><a href="<?php echo base_url()."forget-pass";?>">パスワードをお忘れの方はコチラ</a></p>
         <input type="submit" value="ログイン">
-
     </form>
     <br>
     <p><a href="<?php echo base_url() . "compass/register_mail_form"; ?>">会員登録はこちら</a>
