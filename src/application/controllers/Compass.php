@@ -33,7 +33,7 @@ class Compass extends CI_Controller
     {
         $this->load->view('top_view');
     }
-    public function serch()
+    public function serch($data)
     {
         $this->load->view('serch_pages/serch_view');
     }
@@ -51,11 +51,11 @@ class Compass extends CI_Controller
             $this->load->view('serch_pages/serch_detail',$data);
         }
     }
+    //****** end point!!!! ******//
     public function profile()
     {
-        $session_id = $this->session->userdata('user_id');
-
-        if($this->load->Compass_model->getData($session_id)){
+        $session_data = $this->session->all_userdata();
+        if($this->load->Compass_model->getData($session_data['user_id'])){
             $this->load->view('profile_pages/profile_view');
         } else {
             echo "データベース登録情報がありません。";
@@ -91,6 +91,7 @@ class Compass extends CI_Controller
         $this->form_validation->set_rules('age_submit', '年齢確認', 'trim|required');
         $this->form_validation->set_rules('terms', '利用同意', 'trim|required');
 
+
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
         if ($this->form_validation->run() == FALSE){
@@ -122,7 +123,6 @@ class Compass extends CI_Controller
 
         $this->form_validation->set_rules('email', 'メールアドレス', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'パスワード', 'trim|required');
-
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
         
         if($this->form_validation->run() === FALSE){
@@ -147,10 +147,10 @@ class Compass extends CI_Controller
         }
     }
     public function can_login() {
-        if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
-            redirect('compass/login');
-        } else {
+        // if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
+        //     redirect('compass/login');
+        // } else {
             $this->top();
-        }
+        
     }
 }
