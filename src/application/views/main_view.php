@@ -42,7 +42,6 @@
     </div>
     <ul>
         <li>
-            <a href="<?php echo base_url()."compass/top";?>" class="btn btn-a">簡単ログイン</a>
             <a href="<?php echo base_url()."compass/login";?>" class="btn btn-c">LOGIN</a>
             <a href="<?php echo base_url()."compass/register_mail_form";?>" class="btn btn-b">SIGN UP</a>
         </li>
