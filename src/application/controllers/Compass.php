@@ -29,11 +29,7 @@ class Compass extends CI_Controller
     {
         $this->load->view('privacy_view');
     }
-    public function top()
-    {
-        $this->load->view('top_view');
-    }
-    public function serch($data)
+    public function serch()
     {
         $this->load->view('serch_pages/serch_view');
     }
@@ -52,9 +48,8 @@ class Compass extends CI_Controller
         }
     }
     //****** end point!!!! ******//
-    public function profile()
+    public function profile($session_data)
     {
-        $session_data = $this->session->all_userdata();
         if($this->load->Compass_model->getData($session_data['user_id'])){
             $this->load->view('profile_pages/profile_view');
         } else {
@@ -135,7 +130,9 @@ class Compass extends CI_Controller
                     $this->session->set_userdata('password',$password);
                     $this->session->set_userdata('user_id',$admin_data['id']);
                     $this->session->set_userdata('is_logged_in', true);
-                    $this->can_login();
+                    $session_data = $this->session->all_userdata();
+                    var_dump($session_data);
+                    $this->can_login($session_data);
                 } else {
                     $this->session->set_flashdata('msg_error','Login missed...');    
                     redirect('compass/login');
@@ -146,11 +143,11 @@ class Compass extends CI_Controller
             }
         }
     }
-    public function can_login() {
-        // if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
-        //     redirect('compass/login');
-        // } else {
-            $this->top();
-        
+    public function can_login($session_data) {
+        if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
+            redirect('compass/login');
+        } else {
+            $this->load->view('top_view',$session_data);
+        }        
     }
 }
