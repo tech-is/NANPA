@@ -114,9 +114,7 @@ class Compass extends CI_Controller
     }
     public function profile($session_data)
     {
-        // var_dump($session_data);
         $session_id = $session_data['user_id'];
-        // exit();
         if($data['results'] = $this->Compass_model->getData($session_id)){
             $this->load->view('profile_pages/profile_view',$data);
         } else {
