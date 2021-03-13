@@ -29,42 +29,6 @@ class Compass extends CI_Controller
     {
         $this->load->view('privacy_view');
     }
-    public function serch()
-    {
-        $this->load->view('serch_pages/serch_view');
-    }
-    public function serch_submit()
-    {
-        $data = array(
-            "prefectures" => $this->input->post('prefectures'),
-            "age" => $this->input->post('age'),
-            "gender" => $this->input->post('gender')
-        );
-        if($data['prefectures'] && $data['age'] && $data['gender'] == $this->Compass_model->serch_data()) {
-            $this->load->view('serch_pages/serch_detail',$data);
-        } else {
-            echo "データベース登録情報がありません。";
-            $this->load->view('serch_pages/serch_detail',$data);
-        }
-    }
-    //****** end point!!!! ******//
-    public function profile($session_data)
-    {
-        if($this->load->Compass_model->getData($session_data['user_id'])){
-            $this->load->view('profile_pages/profile_view');
-        } else {
-            echo "データベース登録情報がありません。";
-            $this->load->view('profile_pages/profile_view');
-        }
-    }
-    public function profile_change()
-    {
-        $this->load->view('profile_pages/profile_edit');
-    }
-    public function post_message()
-    {
-        $this->load->view('profile_pages/message_view');
-    }
     // 新規登録
     public function register_mail_form()
     {
@@ -72,7 +36,6 @@ class Compass extends CI_Controller
     }
     public function register_check()
     {
-
         $data = array(
             "email" => $this->input->post('email'),
             "password" => $this->input->post('password'),
@@ -131,7 +94,6 @@ class Compass extends CI_Controller
                     $this->session->set_userdata('user_id',$admin_data['id']);
                     $this->session->set_userdata('is_logged_in', true);
                     $session_data = $this->session->all_userdata();
-                    var_dump($session_data);
                     $this->can_login($session_data);
                 } else {
                     $this->session->set_flashdata('msg_error','Login missed...');    
@@ -147,7 +109,48 @@ class Compass extends CI_Controller
         if(empty($_SESSION['admin']) || $_SESSION['admin'] !== true){
             redirect('compass/login');
         } else {
-            $this->load->view('top_view',$session_data);
+            $this->profile($session_data);
         }        
+    }
+    public function profile($session_data)
+    {
+        // var_dump($session_data);
+        $session_id = $session_data['user_id'];
+        // exit();
+        if($data['results'] = $this->Compass_model->getData($session_id)){
+            $this->load->view('profile_pages/profile_view',$data);
+        } else {
+            echo "データベース登録情報がありません。";
+            $this->load->view('profile_pages/profile_view');
+        }
+    }
+    public function profile_change()
+    {
+        $this->load->view('profile_pages/profile_edit');
+    }
+    public function serch_submit()
+    {
+        $data = array(
+            "prefectures" => $this->input->post('prefectures'),
+            "age" => $this->input->post('age'),
+            "gender" => $this->input->post('gender')
+        );
+        if($data['prefectures'] && $data['age'] && $data['gender'] == $this->Compass_model->serch_data()) {
+            $this->load->view('serch_pages/serch_detail',$data);
+        } else {
+            echo "データベース登録情報がありません。";
+            $this->load->view('serch_pages/serch_detail',$data);
+        }
+    }
+    public function select_page() {
+        $session_id = $this->input->post('session_id');
+        $page = $this->input->post('page');
+        if($page == 1) {
+            $this->load->view('serch_pages/serch_view',$session_id);
+        } elseif ($page == 2) {
+            $this->profile($session_id);
+        } elseif ($page == 3) {
+            $this->load->view('profile_pages/message_view',$session_id);
+        }
     }
 }

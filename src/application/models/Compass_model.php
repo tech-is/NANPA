@@ -19,6 +19,17 @@ class Compass_model extends CI_Model {
 			return $query->row_array();
 		}        
     }
+    function getData($session_id){
+        // var_dump($session_id);
+        // exit();
+        $query = $this->db->get_where('users', array('id' => $session_id));
+        
+        if($query->num_rows() > 0){
+            return $query->result_array();
+        } else {
+            return false;
+        }
+	}
     public function serch_data()
     {
         $query = $this->db->get('users');
@@ -29,14 +40,5 @@ class Compass_model extends CI_Model {
             return false;
         }
     }
-    function getData($session_id){
-        $query = $this->db->get_where('users', array('id' => $session_id));
-
-        if($query->num_rows() > 0){
-            return $query->result_array();
-        } else {
-            return false;
-        }
-	}
 }
 ?>
