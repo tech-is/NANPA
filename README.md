@@ -40,28 +40,18 @@
 | updata_date  | timestamp   | No    |     | Null    |              |
 
 
-- テーブル名:posts
+- テーブル名:users
 
 |    Column    | Type        | Null  | key | Default |　Extra       |
 | :----------: | :---------: | :---: |:---:|  :---:  |    :---:     |   
 | id           | int(11)     | No    | PRI | None    |auto_increment|
 | email        | varchar(256)| No    |     | Null    |              |
 | password     | varchar(256)| No    |     | Null    |              |
-| is_registrs  | tinyint(4)  | No    |     | Null    |              |
-| created_date | datetime    | No    |     | Null    |              |
-| updata_date  | timestamp   | No    |     | Null    |              |
-
-
-- テーブル名:users
-
-|    Column    | Type        | Null  | key | Default |　Extra       |
-| :----------: | :---------: | :---: |:---:|  :---:  |    :---:     |   
-| id           | int(11)     | No    | PRI | None    |auto_increment|
-| name         | varchar(200)| No    |     | Null    |              |
+| name         | varchar(256)| No    |     | Null    |              |
 | gender       | int(2)      | No    |     | Null    |              |
 | year         | int(8)      | No    |     | Null    |              |
-| address      | varchar(200)| No    |     | Null    |              |
-| specified_at | datetime    | No    |     | Null    |              |
+| address      | varchar(256)| No    |     | Null    |              |
+| profile_img  | varchar(256)| No    |     | Null    |              | 
 | message      | text        | No    |     | Null    |              |
 | post_date    | datetime    | No    |     | Null    |              |
 
