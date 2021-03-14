@@ -29,8 +29,7 @@ class Compass extends CI_Controller
     {
         $this->load->view('privacy_view');
     }
-    // 新規登録
-    public function register_mail_form()
+    public function register()
     {
         $this->load->view('register_pages/register_view');
     }
@@ -114,9 +113,7 @@ class Compass extends CI_Controller
     }
     public function profile($session_data)
     {
-        // var_dump($session_data);
         $session_id = $session_data['user_id'];
-        // exit();
         if($data['results'] = $this->Compass_model->getData($session_id)){
             $this->load->view('profile_pages/profile_view',$data);
         } else {
@@ -124,9 +121,17 @@ class Compass extends CI_Controller
             $this->load->view('profile_pages/profile_view');
         }
     }
-    public function profile_change()
-    {
-        $this->load->view('profile_pages/profile_edit');
+    public function select_pages() {
+        $user_id = $this->input->post('user_id');
+        $pages = $this->input->post('pages');
+        
+        if($pages == 1) {
+            $this->load->view('serch_pages/serch_view',$user_id);
+        } else if ($pages == 2) {
+            $this->load->view('profile_pages/profile_edit',$user_id);
+        } else if ($pages == 3) {
+            $this->load->view('profile_pages/message_view',$user_id);
+        }
     }
     public function serch_submit()
     {
@@ -140,17 +145,6 @@ class Compass extends CI_Controller
         } else {
             echo "データベース登録情報がありません。";
             $this->load->view('serch_pages/serch_detail',$data);
-        }
-    }
-    public function select_page() {
-        $session_id = $this->input->post('session_id');
-        $page = $this->input->post('page');
-        if($page == 1) {
-            $this->load->view('serch_pages/serch_view',$session_id);
-        } elseif ($page == 2) {
-            $this->profile($session_id);
-        } elseif ($page == 3) {
-            $this->load->view('profile_pages/message_view',$session_id);
         }
     }
 }

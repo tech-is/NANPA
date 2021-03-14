@@ -12,7 +12,6 @@ class Compass_model extends CI_Model {
     }
     public function login_check()
     {
-        // $this->db->from('users');
         $query = $this->db->get('users');
 
         if($query->num_rows() > 0){
@@ -20,8 +19,6 @@ class Compass_model extends CI_Model {
 		}        
     }
     function getData($session_id){
-        // var_dump($session_id);
-        // exit();
         $query = $this->db->get_where('users', array('id' => $session_id));
         
         if($query->num_rows() > 0){
