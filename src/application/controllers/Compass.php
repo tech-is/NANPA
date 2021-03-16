@@ -126,9 +126,9 @@ class Compass extends CI_Controller
         $pages = $this->input->post('pages');
         
         if($pages == 1) {
-            $this->serch();
-        } else if ($pages == 2) {
             $this->profile_edit($user_id);
+        } else if ($pages == 2) {
+            $this->serch();
         } else if ($pages == 3) {
             $this->message($user_id);
         }
