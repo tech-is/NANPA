@@ -31,7 +31,7 @@
         <?php } ?>
     </section>
     <a class="botton" href="">投稿内容を変更する</a>
-    <a class="botton" href="<?php echo base_url()."compass/top";?>">TOPに戻る</a>
+    <a class="botton" href="<?php echo base_url()."compass/can_login";?>">TOPに戻る</a>
 </body>
 
 </html>
