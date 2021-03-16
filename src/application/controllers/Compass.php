@@ -126,12 +126,16 @@ class Compass extends CI_Controller
         $pages = $this->input->post('pages');
         
         if($pages == 1) {
-            $this->load->view('serch_pages/serch_view',$user_id);
+            $this->serch();
         } else if ($pages == 2) {
-            $this->load->view('profile_pages/profile_edit',$user_id);
+            $this->profile_edit($user_id);
         } else if ($pages == 3) {
-            $this->load->view('profile_pages/message_view',$user_id);
+            $this->message($user_id);
         }
+    }
+    public function serch()
+    {
+        $this->load->view('serch_pages/serch_view');
     }
     public function serch_submit()
     {
@@ -147,4 +151,13 @@ class Compass extends CI_Controller
             $this->load->view('serch_pages/serch_detail',$data);
         }
     }
+    public function profile_edit($user_id)
+    {
+        $this->load->view('profile_pages/profile_edit',$user_id);
+    }
+    public function message($user_id)
+    {
+        $this->load->view('profile_pages/message_view',$user_id);
+    }
+    
 }
