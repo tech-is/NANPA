@@ -36,7 +36,7 @@
             </select>
     </div>
     <a class="botton" href="<?php echo base_url()."compass/user_update";?>">保存</a>
-    <a class="botton" href="<?php echo base_url()."compass/top";?>">TOPに戻る</a>
+    <a class="botton" href="<?php echo base_url()."compass/can_login";?>">TOPに戻る</a>
 </body>
 
 </html>
