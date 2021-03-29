@@ -68,7 +68,7 @@
                 <img src="<?php echo base_url()."images/woman.jpg";?>" alt="img" class="img-thumbnail">
             </div>
             <div class="col-md-8">
-                <h3>Sample Text</h>
+                <h3>Sample Text</h3>
                 <p class="min">Sample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample TextSample Text</p>
             </div>
         </div>
